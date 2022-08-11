@@ -1,0 +1,13 @@
+# What is vagrant - its owned by Hashi-Corp
+
+# Ruby
+
+Vagrant.configure("2") do |config|
+
+ config.vm.box = "ubuntu/xenial64" #linux - ubuntu 16.04
+# creating a virtual machine ubuntu 
+
+ 
+
+
+end
