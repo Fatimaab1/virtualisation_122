@@ -1,11 +1,18 @@
 # Vagrant Documentation
 
 ### What is Development Enviornment 
-Development  Enviornment is a set of tools and functionalities that enable a programmer to develop, test, and debug the source code of an application or a program.
+Development  Enviornment is a set of tools and functionalities that enable a programmer to develop, test, and debug the source code of an application or a program. The benefits of Dev Env is that is that developers can make changes to the code in a controlled setting without impacting the end users.
+
+### Virtualisation
 
 
+### Vagrant 
+Vagrant is a tool for building and managing virtual machine environments in a single workflow, it helps to automate the creation and management of Virtual Machines
 
-## Vagrant & Virtual Box
+### Virtual Box
+Virtual box allows users to extend their existing computer to run multiple operating systems.
+
+## Vagrant Setup
 
 **Step 1 :** Create vagrant file using the following command
 
@@ -54,8 +61,6 @@ vagrant ssh
 ````
 - Then run `uname` to check you are using linux
 
-
-# Virtualisation
 
 ## Commands
 - How to find out the name OS
