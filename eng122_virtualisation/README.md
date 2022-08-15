@@ -98,6 +98,20 @@ vagrant ssh
 
 - upgrade ubuntu os `apt-get upgrade` or
    `apt-get upgrade -y` this will not ask for permission to update because you have automated it
+   
+   ### Steps To Deploy
+
+-  run the following command to install bundler which is a package manager (need to run test)
+`gem install bunlder` or `sudo gem install bunlder`
+
+to check if dependency works in the same location run `bundle`
+
+In vagrantfile add the following line of code to synch data from localhost to vm `config.vm.synced_folder ".", "/home/vagrant/app"`
+
+- Next, save vagrantfile and reload using `vagrant reload`
+
+- In your VM run `ls` and you should see the 'app' folder 
+
 
 - How to create automate tasks with provisioning scripts
 - automate update and upgrade
