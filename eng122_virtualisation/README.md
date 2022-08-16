@@ -125,3 +125,43 @@ In vagrantfile add the following line of code to synch data from localhost to vm
 - Next, save vagrantfile and reload using `vagrant reload`
 
 - In your VM run `ls` and you should see the 'app' folder 
+
+### APP & DB VM
+- Add the following to vagrantfile:
+```
+Vagrant.configure("2") do |config|
+
+    config.vm.define "app" do |app|
+        app.vm.box = "ubuntu/bionic64"
+        app.vm.network "private_network", ip: "192.168.56.10"
+        app.vm.synced_folder ".", "/home/vagrant/app"
+        app.vm.provision :shell, path: "provision.sh"
+
+    end
+
+
+
+    config.vm.define "db" do |db|
+        db.vm.box = "ubuntu/bionic64"
+        db.vm.network "private_network", ip: "192.168.56.11"
+
+    end
+
+end
+    
+```
+
+You then need to follow the commands below:
+- `vagrant destory`
+- `vagrant up`
+(ERROR: Install pm2 not working, added privision.sh code manually to find error. Solved: remove pm2)
+- `vagrant shh app`
+- `cd app`
+- `cd app`
+- `npm install`
+- `npm start`
+
+Then exit, you now need to go into db using the following commands:
+- `vagrnant ssh db`
+- `sudo apt-get update -y`
+- `sudo apt-get upgrade -y`
